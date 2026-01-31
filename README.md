@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/DEIN_NUTZERNAME/easycheckin/main/icon.png" alt="easycheckin Logo" width="200">
+  <img src="https://raw.githubusercontent.com/haizoooon/easycheckin/main/icon.png" alt="easycheckin Logo" width="200">
 </p>
 
 # 🏠 easycheckin - Die smarte AirBnB Suite
