@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "easycheckin Suite einrichten",
+        "description": "Klicke auf 'Absenden', um die Suite zu installieren. Die Aktionen für Check-In, Check-Out und Reinigung kannst du danach jederzeit über 'Konfigurieren' festlegen."
+      }
+    },
+    "abort": {
+      "already_configured": "Die easycheckin Suite ist bereits konfiguriert. Du kannst nur eine Instanz nutzen."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Aktionen verwalten",
+        "description": "Lege hier fest, was beim Aktivieren der jeweiligen Szene passieren soll.",
+        "data": {
+          "checkin_actions": "Aktionen beim Check-In",
+          "checkout_actions": "Aktionen beim Check-Out",
+          "maintenance_actions": "Aktionen bei Reinigung"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "easycheckin_status": {
+        "state": {
+          "ready": "Bereit",
+          "checkin": "Eingecheckt",
+          "checkout": "Ausgecheckt",
+          "maintenance": "In Reinigung"
+        }
+      }
+    }
+  }
+}
