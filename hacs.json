@@ -1,0 +1,7 @@
+{
+  "name": "easycheckin",
+  "render_readme": true,
+  "type": "integration",
+  "category": "service",
+  "homeassistant": "2026.1.3"
+}
