@@ -1,0 +1,20 @@
+action:
+  - choose:
+      # Check-In: Tür geht auf UND es ist nach der Check-In Zeit (bis spät in die Nacht)
+      - conditions:
+          - condition: time
+            after: !input checkin_start_time
+        sequence:
+          - service: scene.turn_on
+            target:
+              # Nutze hier die Entität, die HA wirklich angelegt hat!
+              entity_id: scene.easycheckin_checkin
+
+      # Check-Out: Tür geht auf UND es ist vor der offiziellen Check-Out Zeit am Morgen
+      - conditions:
+          - condition: time
+            before: !input checkout_end_time
+        sequence:
+          - service: scene.turn_on
+            target:
+              entity_id: scene.easycheckin_checkout

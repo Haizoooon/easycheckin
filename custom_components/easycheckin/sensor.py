@@ -12,6 +12,25 @@ class EasyCheckInStatusSensor(SensorEntity):
         self._attr_native_value = "Bereit"
         self._attr_icon = "mdi:home-circle"
 
+    @callback
+    def _state_listener(event):
+        eid = event.data.get("entity_id")
+        # Wir prüfen, ob 'easy' im Namen vorkommt, um sicherer zu gehen
+        if not ("easy" in eid and "scene" in eid): return
+            
+        # Wir prüfen auf den Teil nach dem letzten Unterstrich
+        if "checkin" in eid.lower(): 
+            self._attr_native_value = "checkin"
+            self._attr_icon = "mdi:home-account"
+        elif "checkout" in eid.lower(): 
+            self._attr_native_value = "checkout"
+            self._attr_icon = "mdi:home-export"
+        elif "maintenance" in eid.lower(): 
+            self._attr_native_value = "maintenance"
+            self._attr_icon = "mdi:vacuum"
+        
+        self.async_write_ha_state()
+
     async def async_added_to_hass(self):
         @callback
         def _state_listener(event):
